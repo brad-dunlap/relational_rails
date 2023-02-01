@@ -7,13 +7,21 @@ RSpec.describe 'the restaurants show page' do
 # (data from each column that is on the parent table)
 	it 'displays the restaurant name' do
 		restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
-		visit "restaurants/#{@restaurant.id}"
+		visit "restaurants/#{restaurant.id}"
 		expect(page).to have_content(restaurant.name)
 		expect(page).to have_content(restaurant.num_of_employees)
 		expect(page).to have_content(restaurant.alcohol_served)
 	end
 
-	it 'displays the number of employees' 
+	it 'displays the number of employees' do
+		restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
+		visit "restaurants/#{restaurant.id}"
+		expect(page).to have_content(restaurant.num_of_employees)
+	end
 
-	it 'displays if alcohol is served'
+	it 'displays if alcohol is served' do
+		restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
+		visit "restaurants/#{restaurant.id}"
+		expect(page).to have_content(restaurant.alcohol_served)
+	end
 end
