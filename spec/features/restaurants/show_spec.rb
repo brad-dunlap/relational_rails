@@ -25,4 +25,17 @@ RSpec.describe 'the restaurants show page' do
 		visit "restaurants/#{restaurant.id}"
 		expect(page).to have_content(restaurant.alcohol_served)
 	end
+
+	it 'displays the number of menu items associated with the restaurant' do
+		restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
+		item1 = restaurant.items.create(name: "Pierogies", price: 6.99, featured: true)
+		visit "restaurants/#{restaurant.id}"
+		expect(page).to have_content(restaurant.items.count)
+	end
+
+	it 'displays a link to the restaurants menu items' do
+		restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
+		visit "restaurants/#{restaurant.id}"
+		expect(page).to have_link("View Menu Items")
+	end
 end

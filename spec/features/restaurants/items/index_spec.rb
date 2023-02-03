@@ -9,4 +9,8 @@ RSpec.describe 'shows items by restaurant' do
 			visit "/restaurants/#{restaurant.id}/items"
 			expect(page).to have_content(item.name)
 	end
+		it 'has a link to all restaurants at the top of the page' do	
+			visit "/restaurants/#{restaurant.id}/items"
+			expect(page).to have_link("All Restaurants")
+	end
 end

@@ -4,3 +4,5 @@
 <p>Created at <%= @restaurant.created_at %></p>
 <p>Updated at <%= @restaurant.updated_at %></p>
 <p>Number of Menu Items: <%= @restaurant.items.count %></p>
+
+<p><%= link_to "View Menu Items", "/restaurants/#{@restaurant.id}/items" %></p>
