@@ -1,3 +1,5 @@
 <% @items.each do |item| %>
 	<p><%= link_to item.name, "/items/#{item.id}" %></p>
 <% end %>
+
+<p><%= link_to "New Menu Item", "items/new" %> </p>

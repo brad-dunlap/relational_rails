@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 	patch '/restaurants/:id', to: 'restaurants#update'
 	get '/restaurants/:id/edit', to: 'restaurants#edit'
 	get '/restaurants/:id/items', to: 'restaurant_items#index'
+	get '/restaurants/:id/items/new', to: 'restaurant_items#new'
+	post '/restaurants/:id/items', to: 'restaurant_items#create'
 	get '/items', to: 'items#index'
 	get '/items/:id', to: 'items#show'
 end

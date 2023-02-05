@@ -1,0 +1,10 @@
+<%= form_with url: "/restaurants/#{@restaurant.id}/items", method: :post, local: true do |form| %>
+	<%= form.label :name, "Name" %>
+	<%= form.text_field :name %>
+	<%= form.label :price, "Price" %>
+	<%= form.text_field :price %>
+	<%= form.label :featured, "Featured?"%>
+	<%= form.check_box :featured %>
+	
+	<%= form.submit "Create Menu Item" %>
+	<% end %>
