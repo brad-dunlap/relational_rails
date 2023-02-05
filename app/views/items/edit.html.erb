@@ -1,0 +1,10 @@
+<%= form_with url: "/items/#{@item.id}", method: :patch, local: true do |form| %>
+	<%= form.label :name, "Name" %>
+	<%= form.text_field :name, :value => "#{@item.name}" %>
+	<%= form.label :price, "Price" %>
+	<%= form.text_field :price, :value => "#{@item.price}"%>
+	<%= form.label :featured, "Featured?"%>
+	<%= form.check_box :featured %>
+	
+	<%= form.submit "Update Item" %>
+	<% end %>
