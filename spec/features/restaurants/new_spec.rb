@@ -16,7 +16,6 @@ RSpec.describe 'the Restaurant creation' do
 		find('#alcohol_served').click
 		click_button("Create Restaurant")
 
-		new_restaurant_id = Restaurant.last.id
 		expect(current_path).to eq("/restaurants")
 		expect(page).to have_content('Super Sushi')
 	end
