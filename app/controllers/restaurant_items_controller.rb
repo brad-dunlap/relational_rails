@@ -1,9 +1,10 @@
 class RestaurantItemsController < ApplicationController
 	def index
 		@restaurant = Restaurant.find(params[:id])
-		@items = @restaurant.items
 		if params[:sort] == "name"
-			@items = @items.order(:name)
+			@items = @restaurant.items.sort_alphabetically
+		else
+			@items = @restaurant.items
 		end
 	end
 

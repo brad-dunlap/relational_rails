@@ -19,7 +19,7 @@ RSpec.describe 'shows items by restaurant' do
 		it 'can sort items alphabetically' do
 			restaurant = Restaurant.create!(name: "Brads", num_of_employees: 2, alcohol_served: true)
 			item1 = restaurant.items.create!(name: "Pizza", price: 6.99, featured: true)
-			item2 = restaurant.items.create!(name: "Pierogies", price: 6.99, featured: true)
+			item2 = restaurant.items.create!(name: "Apples", price: 6.99, featured: true)
 			visit "restaurants/#{restaurant.id}/items"
 
 			click_on "Sort Alphabetically"
