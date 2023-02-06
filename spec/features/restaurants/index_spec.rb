@@ -17,4 +17,11 @@ RSpec.describe 'the restaurants index page' do
 		
 		expect(restaurant2.name).to appear_before(restaurant1.name)
 	end
+
+	it 'links to the edit restaurant page' do
+		restaurant = Restaurant.create!(name: 'The Restaurant', num_of_employees: 1, alcohol_served: false)
+		visit '/restaurants'
+		click_button "Edit #{restaurant.name}"
+		expect(current_path).to eq("/restaurants/#{restaurant.id}/edit")
+	end
 end

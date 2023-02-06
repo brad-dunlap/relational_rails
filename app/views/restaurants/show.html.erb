@@ -6,3 +6,4 @@
 <p>Number of Menu Items: <%= @restaurant.item_count %></p>
 
 <p><%= link_to "View Menu Items", "/restaurants/#{@restaurant.id}/items" %></p>
+<p><%= link_to "Edit #{@restaurant.name}", "/restaurants/#{@restaurant.id}/edit" %></p>
