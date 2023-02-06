@@ -1,5 +1,9 @@
 <% @items.each do |item| %>
 	<p><%= link_to item.name, "/items/#{item.id}" %></p>
+	<p>Price: <%= item.price %></p>
+	<p>Featured?: <%= item.featured %></p>
 <% end %>
+
+<p><%= link_to "Sort Alphabetically", :sort => "name" %> </p>
 
 <p><%= link_to "New Menu Item", "items/new" %> </p>

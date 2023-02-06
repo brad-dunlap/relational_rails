@@ -2,6 +2,9 @@ class RestaurantItemsController < ApplicationController
 	def index
 		@restaurant = Restaurant.find(params[:id])
 		@items = @restaurant.items
+		if params[:sort] == "name"
+			@items = @items.order(:name)
+		end
 	end
 
 	def new
