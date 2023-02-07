@@ -1,10 +1,10 @@
-<h1><%= @restaurant.name %></h1>
-<p>Number of Employees <%= @restaurant.num_of_employees %></p>
+<h2><%= @restaurant.name %></h2>
+<h5><%= link_to "Edit #{@restaurant.name}", "/restaurants/#{@restaurant.id}/edit" %> &nbsp; 
+<%= link_to "Delete #{@restaurant.name}", "/restaurants/#{@restaurant.id}", method: :delete %></h5>
+<p>Number of Employees: <%= @restaurant.num_of_employees %></p>
 <p>Serves Alcohol? <%= @restaurant.alcohol_served %></p>
-<p>Created at <%= @restaurant.created_at %></p>
-<p>Updated at <%= @restaurant.updated_at %></p>
+<p>Created at: <%= @restaurant.created_at %></p>
+<p>Updated at: <%= @restaurant.updated_at %></p>
 <p>Number of Menu Items: <%= @restaurant.item_count %></p>
 
-<p><%= link_to "View Menu Items", "/restaurants/#{@restaurant.id}/items" %></p>
-<p><%= link_to "Edit #{@restaurant.name}", "/restaurants/#{@restaurant.id}/edit" %></p>
-<p><%= link_to "Delete #{@restaurant.name}", "/restaurants/#{@restaurant.id}", method: :delete %></p>
+<p><%= link_to "View Menu Items", "/restaurants/#{@restaurant.id}/items" %> </p> 

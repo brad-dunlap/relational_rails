@@ -2,13 +2,11 @@
 	<h3><%= link_to item.name, "/items/#{item.id}" %></h3>
 	<p>Price: <%= item.price %></p>
 	<p>Featured?: <%= item.featured %></p>
-	<p1><%= link_to "Edit #{item.name}", "/items/#{item.id}/edit", method: :get %></p1>
-	<p1><%= link_to "Delete #{item.name}", "/items/#{item.id}", method: :delete %></p1>
+	<h5><%= link_to "Edit #{item.name}", "/items/#{item.id}/edit", method: :get %> &nbsp;
+	<%= link_to "Delete #{item.name}", "/items/#{item.id}", method: :delete %></h5>
 	<br>
-	<br>
-
 <% end %>
 
-<p><%= link_to "Sort Alphabetically", :sort => "name" %> </p>
+<h4><%= link_to "Sort Alphabetically", :sort => "name" %> </h4>
 
-<p><%= link_to "New Menu Item", "items/new" %> </p>
+<h4><%= link_to "New Menu Item", "items/new" %> </h4>

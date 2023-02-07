@@ -1,12 +1,12 @@
 <h1>Restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>
-	<p><%= link_to restaurant.name, "/restaurants/#{restaurant.id}" %></p>   
+	<h3><%= link_to restaurant.name, "/restaurants/#{restaurant.id}" %></h3>   
 	<p>Created at: <%= restaurant.created_at %> </p>
 	<p><%= link_to "Edit #{restaurant.name}", "/restaurants/#{restaurant.id}/edit", method: :get %>
-	<%= link_to "Delete #{restaurant.name}", "/restaurants/#{restaurant.id}", method: :delete %></p>   
-
+	<%= link_to "Delete #{restaurant.name}", "/restaurants/#{restaurant.id}", method: :delete %></p>
+	<br>
 	<% end %>
 	
-	<p><%= link_to "New Restaurant", "/restaurants/new" %> </p>
+	<h4><%= link_to "New Restaurant", "/restaurants/new" %> </h4>
 
