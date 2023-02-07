@@ -21,7 +21,7 @@ RSpec.describe 'the restaurants index page' do
 	it 'links to the edit restaurant page' do
 		restaurant = Restaurant.create!(name: 'The Restaurant', num_of_employees: 1, alcohol_served: false)
 		visit '/restaurants'
-		click_button "Edit #{restaurant.name}"
+		click_link "Edit #{restaurant.name}"
 		expect(current_path).to eq("/restaurants/#{restaurant.id}/edit")
 	end
 end

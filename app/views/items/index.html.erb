@@ -1,5 +1,6 @@
 <h1>Menu Items</h1>
 <% @items.each do |item| %>
-	<p><%= link_to item.name, "/items/#{item.id}" %></p>
+	<h3><%= link_to item.name, "/items/#{item.id}" %></h3>
+	<p1><%= link_to "Edit #{item.name}", "/items/#{item.id}/edit", method: :get %></p1>
 <% end %>
 

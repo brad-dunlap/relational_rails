@@ -3,4 +3,5 @@
 <p>Featured? <%= @item.featured %></p>
 <p>Created at <%= @item.created_at %></p>
 <p>Updated at <%= @item.updated_at %></p>
-<%= button_to "Edit #{@item.name}", "/items/#{@item.id}/edit", method: :get %>
+<%= link_to "Edit #{@item.name}", "/items/#{@item.id}/edit", method: :get %>
+<p><%= link_to "Delete #{@item.name}", "/items/#{@item.id}", method: :delete %></p>

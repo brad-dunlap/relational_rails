@@ -5,7 +5,7 @@ RSpec.describe 'the menu item edit' do
 		restaurant = Restaurant.create!(name: 'The Restaurant', num_of_employees: 1, alcohol_served: false)
 		item = restaurant.items.create!(name: 'The Sandwich', price: 10.99, featured: false)
 		visit "/items/#{item.id}"
-		click_button "Edit #{item.name}"
+		click_link "Edit #{item.name}"
 		expect(current_path).to eq("/items/#{item.id}/edit")
 	end
 
@@ -13,7 +13,7 @@ RSpec.describe 'the menu item edit' do
 		restaurant = Restaurant.create!(name: 'The Restaurant', num_of_employees: 1, alcohol_served: false)
 		item = restaurant.items.create!(name: 'The Sandwich', price: 10.99, featured: false)
 		visit "/items/#{item.id}"
-		click_button "Edit #{item.name}"
+		click_link "Edit #{item.name}"
 
 		fill_in 'Name', with: 'The NEW Sandwich'
 		click_button 'Update Item'
