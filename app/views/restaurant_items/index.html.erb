@@ -3,6 +3,7 @@
 	<p>Price: <%= item.price %></p>
 	<p>Featured?: <%= item.featured %></p>
 	<p1><%= link_to "Edit #{item.name}", "/items/#{item.id}/edit", method: :get %></p1>
+	<p1><%= link_to "Delete #{item.name}", "/items/#{item.id}", method: :delete %></p1>
 	<br>
 	<br>
 

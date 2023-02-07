@@ -31,4 +31,16 @@ RSpec.describe 'the items index page' do
 			expect(current_path).to eq("/items/#{item1.id}/edit")
 		end
 	end
+
+	describe 'the item delete' do
+		it 'can delete an item from the child index page' do
+			restaurant = Restaurant.create!(name: 'The Restaurant', num_of_employees: 1, alcohol_served: false)
+			item1 = restaurant.items.create!(name: "Paprikash", price: 6.99, featured: true)
+
+			visit "/items"
+			click_link "Delete #{item1.name}"
+			expect(current_path).to eq("/items")
+			expect(page).to have_no_content(item1.name)
+		end
+	end	
 end
